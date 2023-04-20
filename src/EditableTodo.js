@@ -19,7 +19,7 @@ function EditableTodo({ toDo, update, remove }) {
 
   const toDoUpdateData = {
   title: toDo.title,
-  descriptio: toDo.description,
+  description: toDo.description,
   priority: toDo.priority,
   id: toDo.id
 };
@@ -30,7 +30,9 @@ function EditableTodo({ toDo, update, remove }) {
   }
 
   /** Call remove fn passed to this. */
-  function handleDelete() { }
+  function handleDelete() {
+    remove(toDo.id);
+   }
 
   /** Edit form saved; toggle isEditing and update in ancestor. */
   function handleSave(formData) { 
@@ -58,6 +60,7 @@ function EditableTodo({ toDo, update, remove }) {
             </button>
           </div>
           <Todo
+            key={toDo.id}
             id={toDo.id}
             title={toDo.title}
             description={toDo.description}

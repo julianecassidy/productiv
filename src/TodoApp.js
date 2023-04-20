@@ -29,10 +29,12 @@ function TodoApp({ initialTodos }) {
 
   /** update a todo with updatedTodo */
   function update(updatedTodo) {
+    console.log("update is running");
     const id = updatedTodo.id;
     const origTodo = toDos.find(todo => todo.id === id);
     const idx = toDos.indexOf(origTodo);
-    setToDos(toDos.splice(idx, 1, updatedTodo));
+    toDos.splice(idx, 1, updatedTodo)
+    setToDos([...toDos]);
   }
 
   /** delete a todo by id */
