@@ -19,25 +19,27 @@ import EditableTodoList from "./EditableTodoList";
 function TodoApp({ initialTodos }) {
   const [toDos, setToDos] = useState(initialTodos);
 
-  console.log(toDos);
+  console.log("toDos state", toDos);
 
   /** add a new todo to list */
   function create(newTodo) {
-    const addedTodo = { ...newTodo, id: uuid() };
+    const addedTodo = { ...newTodo, id: uuid()};
     setToDos((toDos) => [...toDos, addedTodo]);
   }
 
-  // function addBox(box) {
-  //   const newBox = { ...box, id: uuid() };
-  //   setBoxData((boxes) => [...boxes, newBox]);
-  // }
-
   /** update a todo with updatedTodo */
-  function update(updatedTodo) {}
+  function update(updatedTodo) {
+    const id = updatedTodo.id;
+    const origTodo = toDos.find(todo => todo.id === id);
+    const idx = toDos.indexOf(origTodo);
+    setToDos(toDos.splice(idx, 1, updatedTodo));
+  }
 
   /** delete a todo by id */
-  function remove(id) {}
-  // toDos, update, remove
+  function remove(id) {
+    setToDos(toDos.filter(todo => todo.id !== id));
+  }
+
   return (
     <main className="TodoApp">
       <div className="row">

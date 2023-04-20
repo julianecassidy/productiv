@@ -11,14 +11,15 @@ import React, { useState } from "react";
  */
 
 function TodoForm({ 
-  initialFormData={title: "", description: "", priority: 1},
+  initialFormData={title: "", description: "", priority: 1, id: ""},
   handleSave
  }) {
 
   const [formData, setFormData] = useState({
     title: initialFormData.title,
     description: initialFormData.description,
-    priority: initialFormData.priority
+    priority: initialFormData.priority,
+    id: initialFormData.id
   })
 
   console.log("formData state", formData);
@@ -37,6 +38,7 @@ function TodoForm({
   /** Call parent function and clear form. */
   function handleSubmit(evt) { 
     evt.preventDefault();
+    console.log("formData", formData);
     handleSave(formData);
     setFormData(initialFormData);
   }
