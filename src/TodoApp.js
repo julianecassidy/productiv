@@ -11,7 +11,7 @@ import EditableTodoList from "./EditableTodoList";
  * - initialTodos: possible array of [ todo, ... ]
  *
  * State:
- * - todos: array of [ todo, ... ]
+ * - toDos: array of [ todo, ... ]
  *
  * App -> TodoApp -> { TodoForm, EditableTodoList }
  */
@@ -23,23 +23,22 @@ function TodoApp({ initialTodos }) {
 
   /** add a new todo to list */
   function create(newTodo) {
-    const addedTodo = { ...newTodo, id: uuid()};
+    const addedTodo = { ...newTodo, id: uuid() };
     setToDos((toDos) => [...toDos, addedTodo]);
   }
 
   /** update a todo with updatedTodo */
   function update(updatedTodo) {
-    console.log("update is running");
-    const id = updatedTodo.id;
-    const origTodo = toDos.find(todo => todo.id === id);
-    const idx = toDos.indexOf(origTodo);
-    toDos.splice(idx, 1, updatedTodo)
+    const origTodoId = toDos.indexOf(
+      toDos.find((todo) => todo.id === updatedTodo.id)
+    );
+    toDos.splice(origTodoId, 1, updatedTodo);
     setToDos([...toDos]);
   }
 
   /** delete a todo by id */
   function remove(id) {
-    setToDos(toDos.filter(todo => todo.id !== id));
+    setToDos(toDos.filter((todo) => todo.id !== id));
   }
 
   return (
@@ -54,11 +53,12 @@ function TodoApp({ initialTodos }) {
         </div>
 
         <div className="col-md-6">
-          (if no top todo, omit this whole section)
-          <section className="mb-4">
-            <h3>Top Todo</h3>
-            <TopTodo />
-          </section>
+          {toDos.length > 0 && (
+            <section className="mb-4">
+              <h3>Top Todo</h3>
+              <TopTodo toDos={toDos} />
+            </section>
+          )}
           <section>
             <h3 className="mb-3">Add Nü</h3>
             <TodoForm handleSave={create} />

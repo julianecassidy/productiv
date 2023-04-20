@@ -5,17 +5,29 @@ import Todo from "./Todo";
 /** Shows the top todo.
  *
  * Props:
- * - todos
+ * - toDos
  *
  * TodoApp -> TopTodo
  */
 
-function TopTodo() {
+function TopTodo({ toDos }) {
   // lowest-priority # is the highest priority
-  // let top = todos.reduce(
-  //     (acc, cur) => cur.priority < acc.priority ? cur : acc, todos[0]);
+  let top = toDos.reduce(
+    (acc, cur) => (cur.priority < acc.priority ? cur : acc),
+    toDos[0]
+  );
+  console.log(top, "TOP TODO");
 
-  return <Todo  />;
+  return (
+    <Todo
+      id={top.id}
+      title={top.title}
+      description={top.description}
+      priority={top.priority}
+    />
+  );
 }
+
+// id, title, description, priority
 
 export default TopTodo;
