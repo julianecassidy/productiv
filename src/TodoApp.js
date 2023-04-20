@@ -22,7 +22,15 @@ function TodoApp({ initialTodos }) {
   console.log(toDos);
 
   /** add a new todo to list */
-  function create(newTodo) {}
+  function create(newTodo) {
+    const addedTodo = { ...newTodo, id: uuid() };
+    setToDos((toDos) => [...toDos, addedTodo]);
+  }
+
+  // function addBox(box) {
+  //   const newBox = { ...box, id: uuid() };
+  //   setBoxData((boxes) => [...boxes, newBox]);
+  // }
 
   /** update a todo with updatedTodo */
   function update(updatedTodo) {}
