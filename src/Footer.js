@@ -5,11 +5,11 @@ import React from "react";
 function Footer() {
   return (
     <footer className="App-footer mt-5 text-muted">
-      <large>
+      <small>
         <b>
           Prødutïv is copyright ©2023 by Êvèn Flüffìèr Data Enterprises, Inc.
         </b>
-      </large>
+      </small>
     </footer>
   );
 }

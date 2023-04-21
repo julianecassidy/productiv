@@ -23,24 +23,26 @@ function TodoApp({ initialTodos }) {
 
   /** add a new todo to list */
   function create(newTodo) {
-    const addedTodo = { ...newTodo, id: uuid() };
+    const addedTodo = { ...newTodo, id: uuid(), priority: Number(newTodo.priority) };
     setToDos((toDos) => [...toDos, addedTodo]);
   }
 
   /** update a todo with updatedTodo */
-  // Add all of this functionality into the callback pattern
   function update(updatedTodo) {
     const origTodoId = toDos.indexOf(
       toDos.find((todo) => todo.id === updatedTodo.id)
     );
-    toDos.splice(origTodoId, 1, updatedTodo);
-    setToDos([...toDos]);
+    setToDos(curr => curr.map( (todo, i) =>
+      i === origTodoId
+      ? todo = updatedTodo
+      : todo)
+    );
   }
 
   // Add this functionality into the callback pattern
   /** delete a todo by id */
   function remove(id) {
-    setToDos(toDos.filter((todo) => todo.id !== id));
+    setToDos(curr => curr.filter((todo) => todo.id !== id));
   }
 
   return (

@@ -30,7 +30,6 @@ function TodoForm({
   console.log("formData state", formData);
 
   /** Update form input. */
-  // Make sure that priority is being stored as a number as opposed to the string being passed in.
   function handleChange(evt) {
     const fieldName = evt.target.name;
     const value = evt.target.value;

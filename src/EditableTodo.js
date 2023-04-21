@@ -38,6 +38,7 @@ function EditableTodo({ toDo, update, remove }) {
 
   /** Edit form saved; toggle isEditing and update in ancestor. */
   function handleSave(formData) {
+    formData.priority = Number(formData.priority);
     update(formData);
     setBeingEdited(false);
   }
