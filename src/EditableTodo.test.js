@@ -89,27 +89,34 @@ describe("EditableTodo component", function () {
     expect(container).toContainHTML("test todo");
   });
 
-  // it("Calls the handleSave function when the save button is clicked", function () {
-  //   const { container } = render(
-  //     <EditableTodo toDo={TEST_TODO} update={testUpdate} remove={testRemove} />
-  //   );
+  it("Calls the handleSave function when the save button is clicked", function () {
+    const { container, debug } = render(
+      <EditableTodo toDo={TEST_TODO} update={testUpdate} remove={testRemove} />
+    );
 
-  //   // Expect Editable Todo button to be in the container before click.
-  //   const EditableToDoToggle = container.querySelector(".EditableTodo-toggle");
-  //   expect(EditableToDoToggle).toBeInTheDocument();
-  //   // Click on Edit Button for a ToDo.
-  //   fireEvent.click(EditableToDoToggle);
-  //   // Expect Editable Todo button to not be in the container after click. Shows Todo form.
-  //   expect(EditableToDoToggle).not.toBeInTheDocument();
-  //   expect(container.querySelector(".Editable-TodoForm")).toBeInTheDocument();
-  // });
+    // Expect Editable Todo button to be in the container before click.
+    const EditableToDoToggle = container.querySelector(".EditableTodo-toggle");
+    expect(EditableToDoToggle).toBeInTheDocument();
+    // Click on Edit Button for a ToDo.
+    fireEvent.click(EditableToDoToggle);
+    // debug(container);
+    // Expect Editable Todo button to not be in the container after click. Shows Todo form.
+    expect(EditableToDoToggle).not.toBeInTheDocument();
+    expect(container.querySelector(".Editable-TodoForm")).toBeInTheDocument();
+
+    const priorityInput = container.querySelector("#newTodo-priority");
+    const titleInput = container.querySelector("#newTodo-title");
+    const submitBtn = container.querySelector(".NewTodoForm-addBtn");
+    // fill out the form
+    fireEvent.change(priorityInput, { target: { value: "1" } });
+    fireEvent.change(titleInput, { target: { value: "new title" } });
+    // submit form here
+    fireEvent.click(submitBtn);
+    
+    // check that the update function is called, form is hidden, todo is shown
+    debug(container); 
+    expect(testUpdate).toHaveBeenCalled();
+    expect(container.querySelector(".EditableTodo-toggle")).toBeInTheDocument();
+    expect(container.querySelector(".Editable-TodoForm")).not.toBeInTheDocument();
+    });
 });
-
-// {
-//   /* <button
-//               className="EditableTodo-delBtn btn-link btn btn-sm text-danger"
-//               onClick={handleDelete}
-//             >
-//               Del
-//             </button> */
-// }
