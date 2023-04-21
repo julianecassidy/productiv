@@ -7,7 +7,7 @@ import Todo from "./Todo";
  * Props:
  * - toDos
  *
- * TodoApp -> TopTodo
+ * TodoApp -> TopTodo -> Todo
  */
 
 function TopTodo({ toDos }) {
@@ -27,7 +27,5 @@ function TopTodo({ toDos }) {
     />
   );
 }
-
-// id, title, description, priority
 
 export default TopTodo;

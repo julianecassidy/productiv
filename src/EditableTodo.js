@@ -25,7 +25,7 @@ function EditableTodo({ toDo, update, remove }) {
     priority: toDo.priority,
     id: toDo.id,
   };
-  
+
   /** Turns setBeingEditing to false */
   function toggleEdit() {
     setBeingEdited(true);
@@ -46,7 +46,9 @@ function EditableTodo({ toDo, update, remove }) {
   return (
     <div className="EditableTodo">
       {beingEdited ? (
-        <TodoForm initialFormData={toDoUpdateData} handleSave={handleSave} />
+        <div className="Editable-TodoForm">
+          <TodoForm initialFormData={toDoUpdateData} handleSave={handleSave} />
+        </div>
       ) : (
         <div className="mb-3">
           <div className="float-end text-sm-end">
