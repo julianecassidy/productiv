@@ -8,7 +8,6 @@ const TEST_TODO = {
   priority: 1,
   id: 1,
 };
-// TODO: add a blank function and pass this in as a prop, then test if it is called
 
 function testUpdate() {
   console.log("Called test update!");
