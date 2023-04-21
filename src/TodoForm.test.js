@@ -6,5 +6,4 @@ describe("TodoForm component", function () {
   it("renders without crashing", function () {
     render(<TodoForm />);
   });
-
 });

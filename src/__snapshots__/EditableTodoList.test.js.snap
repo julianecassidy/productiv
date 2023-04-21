@@ -1,0 +1,178 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditableTodoList component matches snapshot 1`] = `
+<div>
+  <div
+    class="toDos"
+  >
+    <div
+      class="EditableTodo"
+    >
+      <div
+        class="mb-3"
+      >
+        <div
+          class="float-end text-sm-end"
+        >
+          <button
+            class="EditableTodo-toggle btn-link btn btn-sm"
+          >
+            Edit
+          </button>
+          <button
+            class="EditableTodo-delBtn btn-link btn btn-sm text-danger"
+          >
+            Del
+          </button>
+        </div>
+        <div
+          class="Todo"
+          id="testId"
+        >
+          <div>
+            <b>
+              test todo priority 2
+            </b>
+             
+            <small>
+              Priority: 
+              2
+            </small>
+          </div>
+          <div>
+            <small>
+              test desc
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="EditableTodo"
+    >
+      <div
+        class="mb-3"
+      >
+        <div
+          class="float-end text-sm-end"
+        >
+          <button
+            class="EditableTodo-toggle btn-link btn btn-sm"
+          >
+            Edit
+          </button>
+          <button
+            class="EditableTodo-delBtn btn-link btn btn-sm text-danger"
+          >
+            Del
+          </button>
+        </div>
+        <div
+          class="Todo"
+          id="testId"
+        >
+          <div>
+            <b>
+              test todo priority 1
+            </b>
+             
+            <small>
+              Priority: 
+              1
+            </small>
+          </div>
+          <div>
+            <small>
+              test desc
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="EditableTodo"
+    >
+      <div
+        class="mb-3"
+      >
+        <div
+          class="float-end text-sm-end"
+        >
+          <button
+            class="EditableTodo-toggle btn-link btn btn-sm"
+          >
+            Edit
+          </button>
+          <button
+            class="EditableTodo-delBtn btn-link btn btn-sm text-danger"
+          >
+            Del
+          </button>
+        </div>
+        <div
+          class="Todo"
+          id="testId"
+        >
+          <div>
+            <b>
+              test todo priority 1 2nd version
+            </b>
+             
+            <small>
+              Priority: 
+              1
+            </small>
+          </div>
+          <div>
+            <small>
+              test desc
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="EditableTodo"
+    >
+      <div
+        class="mb-3"
+      >
+        <div
+          class="float-end text-sm-end"
+        >
+          <button
+            class="EditableTodo-toggle btn-link btn btn-sm"
+          >
+            Edit
+          </button>
+          <button
+            class="EditableTodo-delBtn btn-link btn btn-sm text-danger"
+          >
+            Del
+          </button>
+        </div>
+        <div
+          class="Todo"
+          id="testId"
+        >
+          <div>
+            <b>
+              test todo priority 3
+            </b>
+             
+            <small>
+              Priority: 
+              3
+            </small>
+          </div>
+          <div>
+            <small>
+              test desc
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
