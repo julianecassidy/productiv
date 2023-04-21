@@ -28,6 +28,7 @@ function TodoApp({ initialTodos }) {
   }
 
   /** update a todo with updatedTodo */
+  // Add all of this functionality into the callback pattern
   function update(updatedTodo) {
     const origTodoId = toDos.indexOf(
       toDos.find((todo) => todo.id === updatedTodo.id)
@@ -36,6 +37,7 @@ function TodoApp({ initialTodos }) {
     setToDos([...toDos]);
   }
 
+  // Add this functionality into the callback pattern
   /** delete a todo by id */
   function remove(id) {
     setToDos(toDos.filter((todo) => todo.id !== id));

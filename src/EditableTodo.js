@@ -25,7 +25,7 @@ function EditableTodo({ toDo, update, remove }) {
     priority: toDo.priority,
     id: toDo.id,
   };
-
+  // TODO: REWRITE docstring to what it's actually doing.
   /** Toggle if this is being edited */
   function toggleEdit() {
     setBeingEdited(true);
@@ -74,7 +74,5 @@ function EditableTodo({ toDo, update, remove }) {
     </div>
   );
 }
-
-// id, title, description, priority
 
 export default EditableTodo;
